@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import the navigate hook
 
-import './Contact.css';
+import './contact.css';
 import contactImg from '../assets/pictures/catalog 3.jpeg';  // Your contact image
 
 const Contact = () => {

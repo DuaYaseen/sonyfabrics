@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Link } from "react-router-dom";
 
-import './Hero.css';
+import './hero.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 

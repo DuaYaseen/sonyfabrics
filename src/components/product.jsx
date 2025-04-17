@@ -1,5 +1,5 @@
 import React from 'react';
-import './Product.css';
+import './product.css';
 import { useNavigate } from 'react-router-dom';
 
 import catalog1 from '../assets/pictures/catalog 1.jpeg';

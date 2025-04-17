@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Catalog.css';
+import './catalog.css';
 
 const Catalog = () => {
   const location = useLocation();
