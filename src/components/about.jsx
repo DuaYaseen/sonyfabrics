@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './About.css'; // Add custom styles for the About page
+import './about.css'; // Add custom styles for the About page
 
 const About = () => {
   const [review, setReview] = useState({
