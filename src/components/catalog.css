@@ -1,0 +1,41 @@
+.catalog-page {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .catalog-image {
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .catalog-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .catalog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .close-btn,
+  .contact-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .close-btn {
+    background-color: #44064d;
+    color: #fff;
+  }
+  
+  .contact-btn {
+    background-color: #44064d;
+    color: #fff;
+  }
+  
