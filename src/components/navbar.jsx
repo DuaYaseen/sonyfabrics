@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 
-import sonyfab from './sonyfab logo.jpg';
-
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <Link to="/">
-          <img src={sonyfab} alt="Logo" className="logo" />
-        </Link>
-        <span className="brand-name">Sony Fabrics</span>
+      <div className="navbar-logo">
+        <Link to="/">Clothing Brand</Link>
       </div>
-      <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/products">Products</Link></li>
-        {/* <li><Link to="/catalog">Catalog</Link></li> */}
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
+
+      <div className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/products" onClick={closeMenu}>Products</Link>
+        <Link to="/about" onClick={closeMenu}>About</Link>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        <Link to="/cart" onClick={closeMenu}>Cart</Link>
+      </div>
+
+      <div className="hamburger" onClick={toggleMenu}>
+        ☰
+      </div>
     </nav>
   );
 };
