@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import logo from '../assets/sonyfab logo.jpg'; // ✅ Add your logo path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">Clothing Brand</Link>
+        <Link to="/" onClick={closeMenu}>
+          <img src={logo} alt="Logo" className="logo-img" />
+        </Link>
+        <span className="brand-name">Sony Fabrics</span>
       </div>
 
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
@@ -19,7 +23,7 @@ const Navbar = () => {
         <Link to="/products" onClick={closeMenu}>Products</Link>
         <Link to="/about" onClick={closeMenu}>About</Link>
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
-        <Link to="/cart" onClick={closeMenu}>Cart</Link>
+        <Link to="/cart" onClick={closeMenu}>Cart 🛒</Link>
       </div>
 
       <div className="hamburger" onClick={toggleMenu}>

@@ -1,21 +1,28 @@
-/* Navbar.css */
+/* navbar.css */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #222;
-    padding: 15px 20px;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 15px 30px;
+    background-color: #222;
+    color: #fff;
+    flex-wrap: wrap;
   }
   
-  .navbar-logo a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    font-size: 1.2rem;
     font-weight: bold;
   }
   
@@ -27,30 +34,25 @@
   .nav-links a {
     color: white;
     text-decoration: none;
-    transition: 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #ffcc00;
+    font-weight: 500;
   }
   
   .hamburger {
     display: none;
-    font-size: 28px;
+    font-size: 1.5rem;
     cursor: pointer;
+    color: white;
   }
   
-  /* Responsive Rules */
-  @media (max-width: 768px) {
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
     .nav-links {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: #333;
-      flex-direction: column;
-      width: 200px;
-      padding: 15px;
       display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      margin-top: 10px;
+      padding: 10px;
     }
   
     .nav-links.open {
