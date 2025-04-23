@@ -6,12 +6,12 @@ import Navbar from './components/navbar';
 import Hero from './components/hero';
 import Product from './components/product';
 import Catalog from './components/catalog';
-import Contact from './components/contact'; // ← don't forget this
+import Contact from './components/contact';
 import About from './components/about';
-import Login from './components/login';
+import Footer from './components/footer'; // Import footer
 
 function App() {
-  const [selectedCatalog, setSelectedCatalog] = useState(null); // ← This is the missing line!
+  const [selectedCatalog, setSelectedCatalog] = useState(null);
 
   return (
     <Router>
@@ -22,9 +22,8 @@ function App() {
         <Route path="/catalog" element={<Catalog selectedCatalog={selectedCatalog} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* Add route for About */}
       </Routes>
+      <Footer /> {/* Displayed on all pages */}
     </Router>
   );
 }

@@ -10,17 +10,17 @@ const About = () => {
 
   const [reviews, setReviews] = useState([
     {
-      name: "Alice",
+      name: "Mrs Faisal",
       comment: "Absolutely love this brand! The quality of the clothes is top-notch and the designs are amazing!",
       rating: 5,
     },
     {
-      name: "John",
+      name: "Mrs Babar",
       comment: "Great fit and the fabrics are so comfortable. Highly recommend this brand!",
       rating: 4,
     },
     {
-      name: "Emma",
+      name: "M. Raheel",
       comment: "I love the eco-friendly materials they use! Stylish and sustainable.",
       rating: 5,
     },
