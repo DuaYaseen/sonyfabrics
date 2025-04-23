@@ -79,9 +79,10 @@ const Contact = () => {
             required
           >
             <option value="">Select Pricing</option>
-            <option value="Basic">Basic</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
+            <option value="Basic">Under 3000</option>
+            <option value="Standard">Under 4000</option>
+            <option value="Premium">under 5000</option>
+            <option value="Premium">Upto 5000</option>
           </select>
 
           <button type="submit">Submit</button>

@@ -40,7 +40,7 @@ const products = [
   { title: 'Catalog Fifteen', description: 'Built for performance', image: catalog15 },
   { title: 'Catalog Sixteen', description: 'Clean UI', image: catalog16 },
   { title: 'Catalog Seventeen', description: 'Responsive layout', image: catalog17 },
-  { title: 'Catalog Eighteen', description: 'SEO optimized', image: catalog18 },
+  { title: 'Catalog Eighteen', description: 'SEO optimized', image: catalog2 },
 ];
 
 const Product = () => {

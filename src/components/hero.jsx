@@ -6,9 +6,9 @@ import './hero.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import catalog1 from '../assets/pictures/catalog 1.jpeg';
-import catalog2 from '../assets/pictures/catalog 2.jpeg';
-import catalog3 from '../assets/pictures/catalog 3.jpeg';
+import catalog1 from '../assets/pictures/catalog 2.jpeg';
+import catalog2 from '../assets/pictures/catalog 26.jpeg';
+import catalog3 from '../assets/pictures/catalog 27.jpeg';
 
 const Hero = () => {
   const settings = {
