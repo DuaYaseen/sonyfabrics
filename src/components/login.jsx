@@ -1,52 +1,29 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// client/src/pages/Login.jsx
+import axios from "axios";
+import { useState } from "react";
 import './login.css';
 
-const Login = () => {
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  });
 
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
+function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
-        const res = await axios.post('http://localhost:5000/api/login', user);
-
-      alert(res.data.message);
+      const res = await axios.post("/login", { email, password });
+      console.log(res.data); // Handle login success
     } catch (err) {
-      alert('Login failed. Please try again.');
+      console.error("Login failed", err);
     }
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Email" 
-          value={user.email}
-          onChange={handleChange}
-          required 
-        />
-        <input 
-          type="password" 
-          name="password" 
-          placeholder="Password" 
-          value={user.password}
-          onChange={handleChange}
-          required 
-        />
-        <button type="submit">Login</button>
-      </form>
+    <div>
+      <input onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+      <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
-};
+}
 
 export default Login;

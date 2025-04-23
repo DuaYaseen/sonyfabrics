@@ -22,7 +22,8 @@ function App() {
         <Route path="/catalog" element={<Catalog selectedCatalog={selectedCatalog} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} /> {/* Add route for About */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* Add route for About */}
       </Routes>
     </Router>
   );
