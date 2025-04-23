@@ -8,6 +8,7 @@ import Product from './components/product';
 import Catalog from './components/catalog';
 import Contact from './components/contact'; // ← don't forget this
 import About from './components/about';
+import Login from './components/login';
 
 function App() {
   const [selectedCatalog, setSelectedCatalog] = useState(null); // ← This is the missing line!
@@ -20,7 +21,8 @@ function App() {
         <Route path="/products" element={<Product setSelectedCatalog={setSelectedCatalog} />} />
         <Route path="/catalog" element={<Catalog selectedCatalog={selectedCatalog} />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} /> {/* Add route for About */}
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} /> {/* Add route for About */}
       </Routes>
     </Router>
   );

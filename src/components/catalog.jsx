@@ -15,19 +15,33 @@ const Catalog = () => {
     navigate('/contact');
   };
 
+  const handleAddToCart = () => {
+    console.log('Added to Cart:', { image, title, description });
+    navigate('/cart', {
+      state: { image, title, description }
+    });
+  };
+
   return (
     <div className="catalog-page">
       {image ? (
-        <>
-          <img src={image} alt={title} className="catalog-image" />
-          <h2>{title}</h2>
-          <p className="catalog-description">{description}</p>
-          <p className="catalog-description">More details will known after contacting Us</p> 
-          <div className="catalog-buttons">
-            <button className="close-btn" onClick={handleClose}>Close</button>
-            <button className="contact-btn" onClick={handleContact}>Contact Us</button>
+        <div className="catalog-content">
+          <div className="catalog-image-container">
+            <img src={image} alt={title} className="catalog-image" />
           </div>
-        </>
+
+          <div className="catalog-details">
+            <h2>{title}</h2>
+            <p className="catalog-description">{description}</p>
+            <p className="catalog-description">More details will be known after contacting us.</p>
+
+            <div className="catalog-buttons">
+              <button className="close-btn" onClick={handleClose}>Close</button>
+              <button className="contact-btn" onClick={handleContact}>Contact Us</button>
+              <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart 🛒</button>
+            </div>
+          </div>
+        </div>
       ) : (
         <p>No catalog selected.</p>
       )}

@@ -1,58 +1,75 @@
-/* navbar.css */
-
+/* Navbar container */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #222;
-    color: #fff;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffffb7;
+    border-bottom: 1px solid #ccc;
     flex-wrap: wrap;
   }
   
+  /* Logo */
   .navbar-logo {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
   
   .logo-img {
     height: 40px;
-    width: auto;
-    margin-right: 10px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
   }
   
   .brand-name {
     font-size: 1.2rem;
     font-weight: bold;
+    color: #333;
   }
   
+  /* Nav Links container (centered) */
   .nav-links {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    flex: 1;
   }
   
   .nav-links a {
-    color: white;
     text-decoration: none;
+    color: #333;
     font-weight: 500;
+    transition: color 0.3s ease;
   }
   
+  .nav-links a:hover {
+    color: #520968;
+  }
+  
+  /* Cart Icon (right aligned) */
+  .cart-link {
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Hamburger for small screens */
   .hamburger {
     display: none;
-    font-size: 1.5rem;
+    font-size: 24px;
     cursor: pointer;
-    color: white;
   }
   
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
+  /* Responsive */
+  @media (max-width: 768px) {
     .nav-links {
-      display: none;
       flex-direction: column;
+      align-items: center;
       width: 100%;
-      background-color: #333;
-      margin-top: 10px;
-      padding: 10px;
+      display: none;
     }
   
     .nav-links.open {
@@ -61,6 +78,12 @@
   
     .hamburger {
       display: block;
+      margin-left: auto;
+    }
+  
+    .cart-link {
+      order: 3;
+      margin: 10px 0;
     }
   }
   

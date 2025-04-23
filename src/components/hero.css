@@ -50,7 +50,7 @@
   
   .hero-btn {
     padding: 12px 28px;
-    background-color: #00bfff;
+    background-color: #47054d;
     color: white;
     font-size: 1rem;
     text-decoration: none;
@@ -59,7 +59,7 @@
   }
   
   .hero-btn:hover {
-    background-color: #009acd;
+    background-color: #47054d;
   }
   
   @keyframes fadeIn {

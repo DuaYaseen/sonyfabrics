@@ -23,8 +23,11 @@ const Navbar = () => {
         <Link to="/products" onClick={closeMenu}>Products</Link>
         <Link to="/about" onClick={closeMenu}>About</Link>
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
-        <Link to="/cart" onClick={closeMenu}>Cart 🛒</Link>
+        <Link to="/login" onClick={closeMenu}>Login</Link>
       </div>
+      <div className="cart-link">
+  <Link to="/cart" onClick={closeMenu}>🛒</Link>
+</div>
 
       <div className="hamburger" onClick={toggleMenu}>
         ☰

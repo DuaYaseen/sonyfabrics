@@ -1,41 +1,41 @@
 .catalog-page {
-    text-align: center;
-    padding: 2rem;
+    padding: 40px;
+  }
+  
+  .catalog-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .catalog-image-container {
+    flex: 1;
+    min-width: 280px;
   }
   
   .catalog-image {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
-    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+  
+  .catalog-details {
+    flex: 1;
+    min-width: 280px;
   }
   
   .catalog-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin: 10px 0;
+    font-size: 1.1rem;
   }
   
   .catalog-buttons {
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .close-btn,
-  .contact-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-  }
-  
-  .close-btn {
-    background-color: #44064d;
-    color: #fff;
-  }
-  
-  .contact-btn {
-    background-color: #44064d;
-    color: #fff;
+    flex-wrap: wrap;
+    gap: 10px;
   }
   
