@@ -1,122 +1,99 @@
 .catalog-page {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    padding: 2rem;
   }
   
   .catalog-wrapper {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
   }
   
   .catalog-image-preview {
-    flex: 1;
+    flex: 1 1 400px;
     max-width: 500px;
   }
   
   .main-catalog-image {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
     object-fit: cover;
+    border-radius: 8px;
   }
   
   .thumbnail-row {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
     flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: 10px;
   }
   
   .thumbnail {
-    width: 70px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
+    border: 2px solid transparent;
     border-radius: 4px;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
+    transition: border 0.3s ease;
   }
   
-  .thumbnail.active,
-  .thumbnail:hover {
-    border-color: #390446;
+  .thumbnail.active {
+    border-color: #470444;
   }
   
   .catalog-details {
-    flex: 1;
+    flex: 1 1 400px;
     max-width: 500px;
   }
   
-  .catalog-details h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-  
   .catalog-price {
-    font-size: 24px;
-    color: #000;
-    font-weight: bold;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #500557;
+    margin: 0.5rem 0;
   }
   
-  .catalog-installments {
-    color: green;
-    margin-bottom: 15px;
-  }
-  
-  .catalog-sizes button {
-    margin-right: 8px;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    background: white;
-    transition: background 0.3s;
-  }
-  
-  .catalog-sizes button:hover {
-    background: #f0f0f0;
-  }
-  
-  .add-to-bag-btn {
-    margin: 16px 0;
-    padding: 12px 20px;
-    background-color: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 6px;
-    transition: background 0.3s;
-  }
-  
-  .add-to-bag-btn:hover {
-    background-color: #333;
-  }
-  
-  .catalog-description-box p {
-    margin-bottom: 6px;
-    font-size: 16px;
+  .catalog-description-box {
+    margin-top: 1rem;
   }
   
   .catalog-buttons {
-    margin-top: 20px;
+    margin-top: 2rem;
     display: flex;
-    gap: 10px;
+    gap: 1rem;
   }
   
-  .catalog-buttons button {
-    padding: 10px 16px;
+  .catalog-buttons button,
+  .add-to-bag-btn {
+    padding: 10px 20px;
     border: none;
+    background: #530249;
+    color: #fff;
     cursor: pointer;
-    border-radius: 6px;
-    background-color: #390446;
-    color: white;
-    transition: background 0.3s;
+    border-radius: 4px;
   }
   
-  .catalog-buttons button:hover {
-    background-color: #580663;
+  .catalog-buttons button:hover,
+  .add-to-bag-btn:hover {
+    background: #370455;
+  }
+  
+  /* 🔽 Mobile responsive styling */
+  @media (max-width: 768px) {
+    .catalog-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .catalog-details,
+    .catalog-image-preview {
+      max-width: 100%;
+    }
+  
+    .thumbnail {
+      width: 50px;
+      height: 50px;
+    }
   }
   
