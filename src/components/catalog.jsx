@@ -1,36 +1,71 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './catalog.css';
 
 const Catalog = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { image, title, description } = location.state || {};
+  const {
+    images = [],
+    title,
+    description,
+    price,
+    collection,
+    style,
+    fabric
+  } = location.state || {};
+  
+  const [mainImage, setMainImage] = useState(images[0]);
 
-  const handleClose = () => {
-    navigate('/products');
-  };
-
-  const handleContact = () => {
-    navigate('/contact');
-  };
+  const handleClose = () => navigate('/products');
+  const handleContact = () => navigate('/contact');
+  const handleAddToCart = () => console.log('Added to Cart:', { images, title, description });
 
   return (
     <div className="catalog-page">
-      {image ? (
-        <div className="catalog-content">
-          <div className="catalog-image-container">
-            <img src={image} alt={title} className="catalog-image" />
+      {images.length ? (
+        <div className="catalog-wrapper">
+          <div className="catalog-image-preview">
+            <img src={mainImage} alt={title} className="main-catalog-image" />
+
+            <div className="thumbnail-row">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={`thumbnail ${mainImage === img ? 'active' : ''}`}
+                  onClick={() => setMainImage(img)}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="catalog-details">
-            <h2>{title}</h2>
-            <p className="catalog-description">{description}</p>
-            <p className="catalog-description">Price:  Will known after contact us. </p>
+            {/* <h2>{title}</h2>
+            <p className="catalog-price">PKR 9,990.00</p> */}
+            {/* <p className="catalog-installments">Pay in 3 installments of PKR 3,330.00</p>
+
+            <div className="catalog-sizes">
+              <button>XS</button><button>S</button><button>M</button><button>L</button><button>XL</button>
+            </div> */}
+{/* 
+            <button className="add-to-bag-btn" onClick={handleAddToCart}>ADD TO BAG</button> */}
+
+<h2>{title}</h2>
+<p className="catalog-price">{price}</p>
+
+<div className="catalog-description-box">
+  <p><strong>Collection:</strong> {collection}</p>
+  <p><strong>Style:</strong> {style}</p>
+  <p><strong>Fabric:</strong> {fabric}</p>
+  <p>{description}</p>
+</div>
+
 
             <div className="catalog-buttons">
-              <button className="close-btn" onClick={handleClose}>Close</button>
-              <button className="contact-btn" onClick={handleContact}>Contact Us</button>
+              <button onClick={handleContact}>Contact Us</button>
+              <button onClick={handleClose}>Back to Products</button>
             </div>
           </div>
         </div>
