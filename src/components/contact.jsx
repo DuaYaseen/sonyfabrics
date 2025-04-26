@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import the navigate hook
 
-import './contact.css';
+import './contact.css';  // Your CSS file
 import contactImg from '../assets/pictures/catalog 5.jpeg';  // Your contact image
 
 const Contact = () => {
@@ -15,22 +15,43 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  // Handle form input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);  // Log form data in console
-    alert('Thank you for contacting us!');  // Show alert
-    setSubmitted(true);
-
-    // After 2 seconds, redirect to home page
-    setTimeout(() => {
-      navigate('/');
-    }, 2000);  // 2 seconds delay for redirection
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+    
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log('Data submitted successfully!');
+        alert('Thank you for contacting us!');
+        setSubmitted(true);
+  
+        setTimeout(() => {
+          navigate('/');
+        }, 2000);  // 2 seconds delay
+      } else {
+        console.error('Failed to submit data');
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error while submitting:', error);
+      alert('Server error. Please try again later.');
+    }
   };
-
+  
   return (
     <div className="contact-container">
       <div className="contact-image">
@@ -81,7 +102,7 @@ const Contact = () => {
             <option value="">Select Pricing</option>
             <option value="Basic">Under 3000</option>
             <option value="Standard">Under 4000</option>
-            <option value="Premium">under 5000</option>
+            <option value="Premium">Under 5000</option>
             <option value="Premium">Upto 5000</option>
           </select>
 
