@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
 
+const cors = require('cors');
 app.use(cors());
+
 app.use(bodyParser.json());
 
 // Real MongoDB URI
@@ -41,6 +42,7 @@ app.post('/api/contact', async (req, res) => {
       res.status(500).send('Error saving message');
     }
   });
+  
   
 
 app.listen(port, () => {
