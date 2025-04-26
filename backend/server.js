@@ -30,17 +30,18 @@ const Contact = mongoose.model('Contact', contactSchema);
 
 // POST route to handle form submissions
 app.post('/api/contact', async (req, res) => {
-  const { name, email, address, contact, pricing } = req.body;
-
-  try {
-    const newContact = new Contact({ name, email, address, contact, pricing });
-    await newContact.save();
-    res.status(201).send('Message saved successfully');
-  } catch (error) {
-    console.error('Error saving message:', error);
-    res.status(500).send('Error saving message');
-  }
-});
+    const { name, email, address, contact, pricing } = req.body;
+  
+    try {
+      const newContact = new Contact({ name, email, address, contact, pricing });
+      await newContact.save();
+      res.status(201).send('Message saved successfully');
+    } catch (error) {
+      console.error('Error saving message:', error);
+      res.status(500).send('Error saving message');
+    }
+  });
+  
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
